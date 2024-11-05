@@ -11,10 +11,8 @@ const firstPromise = new Promise((resolve, reject) => {
 });
 
 const secondPromise = new Promise((resolve, reject) => {
-  document.addEventListener('auxclick', (evt) => {
-    if (evt.button === 2) {
-      resolve(`Second promise was resolved`);
-    }
+  document.addEventListener('contextmenu', (evt) => {
+    resolve(`Second promise was resolved`);
   });
 
   document.addEventListener('click', (evt) => {
@@ -26,11 +24,9 @@ const thirdPromise = new Promise((resolve, reject) => {
   let leftClicked = false;
   let rightClicked = false;
 
-  document.addEventListener('auxclick', (evt) => {
-    if (evt.button === 2) {
-      rightClicked = true;
-      checkBothClicks();
-    }
+  document.addEventListener('contextmenu', (evt) => {
+    rightClicked = true;
+    checkBothClicks();
   });
 
   document.addEventListener('click', () => {
